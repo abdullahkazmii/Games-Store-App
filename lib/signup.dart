@@ -14,6 +14,7 @@ class signup extends StatefulWidget {
 }
 
 class _signupState extends State<signup> {
+  bool _isSigningUp = false;
   final formkey= GlobalKey<FormState>();
   final FirebaseServices _auth = FirebaseServices();
   TextEditingController _usernameController = TextEditingController();
@@ -199,12 +200,18 @@ class _signupState extends State<signup> {
                         ElevatedButton(
                           onPressed: () async {
                             if (formkey.currentState!.validate()) {
+                              setState(() {
+                                _isSigningUp = true;
+                              });
                               String name = _usernameController.text;
                               String email = _emailnameController.text;
                               String password = _passwordnameController.text;
 
                               User? user = await _auth.signUpMethod(
                                   email, password);
+                              setState(() {
+                                _isSigningUp = false;
+                              });
 
                               if (user != null) {
                                 print("User is successfully created");
@@ -214,21 +221,22 @@ class _signupState extends State<signup> {
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.grey, // Set the button background color
-                            onPrimary: Colors.black54, // Set the text color
+                            onPrimary: Colors.black87, // Set the text color
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5.0), // Set a smaller button border radius
                             ),
-                            padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0), // Reduce button padding
+                            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 85.0), // Reduce button padding
                             side: BorderSide(
                               color: Colors.black, // Set the border color
                               width: 1.5, // Set the border width
                             ),
                           ),
-                          child: Text(
-                            'Create',
+
+                          child: _isSigningUp? CircularProgressIndicator(color: Colors.white,):  Text(
+                            'Create your Account',
                             style: TextStyle(
                               fontSize: 16.0, // Decrease font size for a slimmer look
-                              fontWeight: FontWeight.normal,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),

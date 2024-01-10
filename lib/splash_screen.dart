@@ -114,6 +114,6 @@ class _splash_screenState extends State<splash_screen> {
       animate = true;
     });
     await Future.delayed(Duration(milliseconds: 3000));
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => signup()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => login()));
   }
 }

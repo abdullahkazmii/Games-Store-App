@@ -9,17 +9,17 @@ import 'firebase_options.dart';
 
 Future<void> main()async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: FirebaseOptions(
-  apiKey: "AIzaSyDn0Uk3AjsF1A8884xVB7gpimx14FDLum8",
-  authDomain: "game-store-app-f429b.firebaseapp.com",
-  projectId: "game-store-app-f429b",
-  storageBucket: "game-store-app-f429b.appspot.com",
-  messagingSenderId: "783667866828",
-  appId: "1:783667866828:web:c581a6ec64d56cd548a669"
-  ),);
+  // await Firebase.initializeApp(
+  //   options: FirebaseOptions(
+  // apiKey: "AIzaSyDn0Uk3AjsF1A8884xVB7gpimx14FDLum8",
+  // authDomain: "game-store-app-f429b.firebaseapp.com",
+  // projectId: "game-store-app-f429b",
+  // storageBucket: "game-store-app-f429b.appspot.com",
+  // messagingSenderId: "783667866828",
+  // appId: "1:783667866828:web:c581a6ec64d56cd548a669"
+  // ),);
 
-  //await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
