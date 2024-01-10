@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:project/auth_service.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+
 class login extends StatefulWidget {
   static const String id='login';
   const login({super.key});
@@ -18,6 +19,7 @@ class _loginState extends State<login> {
   final formkey= GlobalKey<FormState>();
   bool _isSigning = false;
   final FirebaseServices _auth = FirebaseServices();
+
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   TextEditingController _usernameController = TextEditingController();
   TextEditingController _emailnameController = TextEditingController();
@@ -131,6 +133,8 @@ class _loginState extends State<login> {
                         SizedBox(
                           height: 50,
                         ),
+                        Column(
+                          children: [
                         ElevatedButton(
                               onPressed: () async {
                               if (formkey.currentState!.validate()) {
@@ -177,60 +181,91 @@ class _loginState extends State<login> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ElevatedButton(
-                              onPressed: () async {
-                                final GoogleSignIn _googleSignIn = GoogleSignIn();
-                                try{
-                                  final GoogleSignInAccount? googleSignInAccount = await _googleSignIn.signIn();
-                                  if(googleSignInAccount != null){
-                                    final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
-
-                                    final AuthCredential credential = GoogleAuthProvider.credential(
-                                      idToken: googleSignInAuthentication.idToken,
-                                      accessToken: googleSignInAuthentication.accessToken,
-                                    );
-                                    await _firebaseAuth.signInWithCredential(credential);
-                                    Navigator.pushNamed(context, 'homepage');
-                                  }
-
-                                } catch(e){
-                                  print("Error Occured: $e");
-
-                                }
-                          },
-
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.black, // Set the button background color
-                            onPrimary: Colors.red, // Set the text color
-
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5.0), // Set a smaller button border radius
+                            SizedBox(
+                              height: 10,
                             ),
-                            padding: EdgeInsets.symmetric(vertical: 18.0, horizontal: 16.0), // Reduce button padding
-                            side: BorderSide(
-                              color: Colors.black, // Set the border color
-                              width: 1.5, // Set the border width
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Divider(
+                                    color: Colors.black,
+                                    thickness: 1.2,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                                  child: Text(
+                                    'OR',
+                                    style: TextStyle(
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Divider(
+                                    color: Colors.black,
+                                    thickness: 1.2,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(FontAwesomeIcons.google),
-                              SizedBox(width: 8.0,),
-                              Text(
-                                'SignIn with Google Account',
-                                style: TextStyle(
-                                  fontSize: 15, // Decrease font size for a slimmer look
-                                  fontWeight: FontWeight.normal,
+                            SizedBox(
+                              height: 10,
+                            ),
+                    GestureDetector(
+                      onTap: () async {
+                        final GoogleSignIn _googleSignIn = GoogleSignIn();
+                        try {
+                          final GoogleSignInAccount? googleSignInAccount = await _googleSignIn.signIn();
+                          if (googleSignInAccount != null) {
+                            final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
+
+                            final AuthCredential credential = GoogleAuthProvider.credential(
+                              idToken: googleSignInAuthentication.idToken,
+                              accessToken: googleSignInAuthentication.accessToken,
+                            );
+                            await _firebaseAuth.signInWithCredential(credential);
+                            Navigator.pushNamed(context, 'homepage');
+                          }
+                        } catch (e) {
+                          print("Error Occured: $e");
+                        }
+                      },
+                      child: Container(
+                        // decoration: BoxDecoration(
+                        //   color: Colors.black, // Set the background color
+                        //   borderRadius: BorderRadius.circular(5.0), // Set border radius
+                        //   border: Border.all(
+                        //     color: Colors.black, // Set the border color
+                        //     width: 1.5, // Set the border width
+                        //   ),
+                        // ),
+                        // padding: EdgeInsets.symmetric(vertical: 18.0, horizontal: 16.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              FontAwesomeIcons.google,
+                              color: Colors.red[900], // Set the icon color
+                            ),
+                            //SizedBox(width: 8.0),
+                            Text(
+                              'SignIn with Google Account',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red[900], // Set the text color
                                 ),
                               ),
                             ],
                           ),
                         ),
-
+                    ),
+                          ]
+                        ),
                         SizedBox(
                           height: 50,
                         ),
@@ -245,15 +280,6 @@ class _loginState extends State<login> {
                                   fontSize: 18,
                                   color: Colors.black,
                                 ),)),
-
-                            TextButton(onPressed:(){
-                              Navigator.pushNamed(context, 'home');
-                            },
-                                child: Text('Forget Password', style: TextStyle(
-                                  decoration: TextDecoration.underline,
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),))
 
                           ],
                         ),

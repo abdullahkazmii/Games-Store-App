@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:project/my_drawer_header.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class homepage extends StatefulWidget {
   static const String id='landing_page';
