@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:project/tab1.dart';
 import 'package:project/tab3.dart';
@@ -89,7 +90,10 @@ class _homepageState extends State<homepage> {
                   ),
                 ),
                 InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    FirebaseAuth.instance.signOut();
+                    Navigator.pushNamed(context, "/login")
+                  },
                   child: ListTile(
                     title: Text("Logout"),
                     leading: Icon(Icons.logout),
