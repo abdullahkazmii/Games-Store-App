@@ -92,7 +92,7 @@ class _homepageState extends State<homepage> {
                 InkWell(
                   onTap: (){
                     FirebaseAuth.instance.signOut();
-                    Navigator.pushNamed(context, "/login")
+                    Navigator.pushNamed(context, "/login");
                   },
                   child: ListTile(
                     title: Text("Logout"),
