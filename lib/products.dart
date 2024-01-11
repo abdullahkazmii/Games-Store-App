@@ -11,12 +11,37 @@ class _productState extends State<product> {
   var product_list=[
     {
       "name":"game 1",
-      "picture":"fortnite-3.jpeg",
+      "picture":"images/fortnite-3.jpeg",
       "price":"900"
     },
     {
       "name":"game 2",
-      "picture":"fortnite-3.jpeg",
+      "picture":"images/fortnite-3.jpeg",
+      "price":"1000"
+    },
+    {
+      "name":"game 2",
+      "picture":"images/fortnite-3.jpeg",
+      "price":"1000"
+    },
+    {
+      "name":"game 2",
+      "picture":"images/fortnite-3.jpeg",
+      "price":"1000"
+    },
+    {
+      "name":"game 2",
+      "picture":"images/fortnite-3.jpeg",
+      "price":"1000"
+    },
+    {
+      "name":"game 2",
+      "picture":"images/fortnite-3.jpeg",
+      "price":"1000"
+    },
+    {
+      "name":"game 2",
+      "picture":"images/fortnite-3.jpeg",
       "price":"1000"
     },
   ];

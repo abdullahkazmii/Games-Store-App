@@ -50,6 +50,7 @@ class DefaultFirebaseOptions {
     projectId: 'game-store-app-f429b',
     authDomain: 'game-store-app-f429b.firebaseapp.com',
     storageBucket: 'game-store-app-f429b.appspot.com',
+    measurementId: 'G-NK0MFQKY4N',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -66,6 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '783667866828',
     projectId: 'game-store-app-f429b',
     storageBucket: 'game-store-app-f429b.appspot.com',
+    androidClientId: '783667866828-dnrinmg56d0paj6efu2boqavth2kvahb.apps.googleusercontent.com',
+    iosClientId: '783667866828-m8oh4id90bnqpd45brggod85reg3i7d2.apps.googleusercontent.com',
     iosBundleId: 'com.example.projectMob',
   );
 
@@ -75,6 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '783667866828',
     projectId: 'game-store-app-f429b',
     storageBucket: 'game-store-app-f429b.appspot.com',
+    androidClientId: '783667866828-dnrinmg56d0paj6efu2boqavth2kvahb.apps.googleusercontent.com',
+    iosClientId: '783667866828-3clueb8rrjvbcj6r387t6jst2lu2hre1.apps.googleusercontent.com',
     iosBundleId: 'com.example.projectMob.RunnerTests',
   );
 }

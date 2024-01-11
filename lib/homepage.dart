@@ -88,6 +88,13 @@ class _homepageState extends State<homepage> {
                     leading: Icon(Icons.help),
                   ),
                 ),
+                InkWell(
+                  onTap: (){},
+                  child: ListTile(
+                    title: Text("Logout"),
+                    leading: Icon(Icons.logout),
+                  ),
+                ),
               ]
             ),
           ),
