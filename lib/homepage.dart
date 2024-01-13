@@ -31,6 +31,7 @@ class _homepageState extends State<homepage> {
         child: _tabs[_selectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blueGrey,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -46,7 +47,7 @@ class _homepageState extends State<homepage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.white,
         onTap: (index) {
           setState(() {
             _selectedIndex = index;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/pages/product_detail.dart';
+
 class product extends StatefulWidget {
   static const String id='product';
   const product({super.key});
@@ -16,22 +17,22 @@ class _productState extends State<product> {
     },
     {
       "name":"game 2",
-      "picture":"images/fortnite-3.jpeg",
+      "picture":"images/slider-1.webp",
       "price":"1000"
     },
     {
       "name":"game 2",
-      "picture":"images/fortnite-3.jpeg",
+      "picture":"images/slider-2.webp",
       "price":"1000"
     },
     {
       "name":"game 2",
-      "picture":"images/fortnite-3.jpeg",
+      "picture":"images/slider-3.webp",
       "price":"1000"
     },
     {
       "name":"game 2",
-      "picture":"images/fortnite-3.jpeg",
+      "picture":"images/slider-4.jpeg",
       "price":"1000"
     },
     {

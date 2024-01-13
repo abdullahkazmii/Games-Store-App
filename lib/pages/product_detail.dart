@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:project/homepage.dart';
 import 'package:project/tab1.dart';
 import 'package:project/tab3.dart';
+import 'package:project/cart.dart';
+import 'package:project/products.dart';
+
 
 class product_detail extends StatefulWidget {
   const product_detail({super.key, this.product_detail_name, this.product_detail_image, this.product_detail_price});
@@ -32,7 +35,7 @@ class _product_detailState extends State<product_detail> {
               icon: Icon(Icons.arrow_back, size: 30,),
               color: Colors.black,
               onPressed: () {
-                Navigator.pushNamed(context, 'tab1'); // Navigate back to the previous page
+                Navigator.pushNamed(context, 'product'); // Navigate back to the previous page
               },
             ),
           ),

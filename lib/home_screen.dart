@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/products.dart';
+import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth;
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -11,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         title: Text( 'Game Store',
           overflow: TextOverflow.ellipsis,
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.blueGrey,
         actions: [
           IconButton(
             icon: Icon(Icons.search), // Replace with search icon
@@ -24,7 +26,78 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      drawer: new Drawer(
+      body: Stack(
+        children: [
+          // Carousel Background
+          GestureDetector(
+            onTap: () {
+              // Navigate to the product page here
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => product()),
+              );
+            },
+            child: CarouselSlider(
+              options: CarouselOptions(
+                height: double.infinity, // Match the screen height
+                viewportFraction: 1.0, // Full width of the screen
+                enlargeCenterPage: false,
+                autoPlay: true,
+                autoPlayInterval: Duration(seconds: 2),
+                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+              ),
+              items: [
+                'images/slider-1.webp',
+                'images/slider-2.jpeg',
+                'images/slider-3.jpeg',
+              ].map((item) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Image.asset(
+                        item,
+                        fit: BoxFit.cover,
+                      ),
+                    );
+                  },
+                );
+              }).toList(),
+            ),
+          ),
+
+          // Your Content
+          AnimatedPositioned(
+            duration: Duration(milliseconds: 1500),
+            top: 20,
+            right: 20,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+              ),
+              child: Text(
+                "Tap to Explore Games",
+                style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.5,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black,
+                      blurRadius: 2,
+                      offset: Offset(1, 1),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+        drawer: new Drawer(
         child: new ListView(
             children:<Widget>[
               new UserAccountsDrawerHeader(
@@ -130,9 +203,25 @@ class HomeScreen extends StatelessWidget {
                   leading: Icon(Icons.help),
                 ),
               ),
+              InkWell(
+                onTap: () {
+                  try {
+                    FirebaseAuth.instance.signOut();
+                    Navigator.pushNamed(context, "login");
+                    print("User is Loggged out Successfully");
+                  } catch (e) {
+                    print('Error navigating to tab3: $e');
+                  }
+                },
+                child: ListTile(
+                  title: Text("Logout"),
+                  leading: Icon(Icons.logout),
+                ),
+              ),
             ]
         ),
       ),
+
 
       );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project/products.dart';
 class tab3 extends StatefulWidget {
+  static const String id='tab3';
+
   const tab3({super.key});
 
   @override
