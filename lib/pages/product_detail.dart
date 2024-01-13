@@ -24,12 +24,28 @@ class _product_detailState extends State<product_detail> {
               overflow: TextOverflow.ellipsis,
             ),
             backgroundColor: Colors.transparent,
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.lightBlueAccent, Colors.purple], // Gradient colors
+                ),
+              ),
+            ),
             actions: [
               IconButton(
-                icon: Icon(Icons.shopping_cart),
-                onPressed: () {
+                onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => homepage(),
+                      )
+                  );
                 },
+                icon: Icon(Icons.home),
               ),
+
+              SizedBox(width: 20,),
             ],
             leading: IconButton(
               icon: Icon(Icons.arrow_back, size: 30,),
@@ -55,14 +71,23 @@ class _product_detailState extends State<product_detail> {
                                         title: Row(
                                           children: [
                                             Expanded(child: Text(
-                                              '${widget.product_detail_price}'
-                                            )),
+                                              '${widget.product_detail_price}')
+                                            ),
                                           ],
                                         ),
                                       )
                                   ),
                                 ),
-                              )
+                              ),
+
+                       Container(
+                           padding: EdgeInsets.all(16),
+                           child: ElevatedButton(
+                             onPressed: () {
+                               },
+                             child: Text("Add to Cart"),
+                           ),
+                         ),
                      ],
      )
 

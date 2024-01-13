@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:project/homepage.dart';
 import 'package:project/auth_service.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 
 class login extends StatefulWidget {
   static const String id='login';
@@ -142,21 +142,46 @@ class _loginState extends State<login> {
                                 });
                                 String email = _emailnameController.text;
                                 String password = _passwordnameController.text;
+                                try {
+                                  UserCredential userCredential =
+                                  await FirebaseAuth.instance.signInWithEmailAndPassword(
+                                    email: email,
+                                    password: password,
+                                  );
 
-                                User? user = await _auth.signInMethod(
-                                    email, password);
-                                setState(() {
-                                  _isSigning = false;
-                                });
+                                  if (userCredential.user != null) {
+                                    // Save user details in SharedPreferences on successful login
+                                    saveUserDetails(email, userCredential.user!.displayName);
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) => homepage()));
+                                  } else {
+                                    print("User Don't Exist");
+                                  }
+                                } catch (e) {
+                                  print("Error signing in: $e");
+                                } finally {
+                                  setState(() {
+                                    _isSigning = false;
+                                  });
+                                }
 
-                                if (user != null) {
-                                  print("User is successfully created");
-                                  Navigator.push(context, MaterialPageRoute(
-                                      builder: (context) => homepage()));
-                                }
-                                else{
-                                  print("User Don't Exist");
-                                }
+                                // User? user = await _auth.signInMethod(email, password);
+                                // setState(() {
+                                //   _isSigning = false;
+                                // });
+                                //
+                                // if (user != null) {
+                                //   print("User is successfully created");
+                                //   saveUserDetails(email, user.displayName);
+                                //   Navigator.push(context, MaterialPageRoute(
+                                //       builder: (context) => homepage()));
+                                // }
+                                // else{
+                                //   print("User Don't Exist");
+                                // }
+
+
+
                               }// Add your login logic here
                           },
                           style: ElevatedButton.styleFrom(
@@ -230,7 +255,7 @@ class _loginState extends State<login> {
                             Navigator.pushNamed(context, 'homepage');
                           }
                         } catch (e) {
-                          print("Error Occured: $e");
+                          print("Error Occure: $e");
                         }
                       },
                       child: Container(
@@ -295,4 +320,12 @@ class _loginState extends State<login> {
     );
   }
 
-}
+// Function to save user details in SharedPreferences
+  void saveUserDetails(String email, String? username) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('email', email);
+    prefs.setString('username', username ?? ''); // Use an empty string if username is null
+  }
+
+  }
+

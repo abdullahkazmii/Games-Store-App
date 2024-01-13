@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project/Profile/myprofile.dart';
 import 'package:project/products.dart';
 import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth;
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:project/categories.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -13,7 +15,16 @@ class HomeScreen extends StatelessWidget {
         title: Text( 'Game Store',
           overflow: TextOverflow.ellipsis,
         ),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.transparent,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.lightBlueAccent, Colors.purple], // Gradient colors
+            ),
+          ),
+        ),
         actions: [
           IconButton(
             icon: Icon(Icons.search), // Replace with search icon
@@ -121,7 +132,17 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: (){},
+                  onTap: () {
+                    try {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => categories()),
+                      );
+                      print("Categories Page");
+                    } catch (e) {
+                      print('Error navigating to Categories: $e');
+                    }
+                  },
                 child: ListTile(
                   title: Text("Category"),
                   leading: Icon(Icons.category),
@@ -173,7 +194,17 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: (){},
+                onTap: (){
+                  try {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Profile()),
+                    );
+                    print("Categories Page");
+                  } catch (e) {
+                    print('Error navigating to Categories: $e');
+                  }
+                },
                 child: ListTile(
                   title: Text("My Profile"),
                   leading: Icon(Icons.person),
