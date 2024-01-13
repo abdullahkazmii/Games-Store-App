@@ -25,7 +25,7 @@ class _productState extends State<product> {
       "price":"1000"
     },
     {
-      "name":"Mortal Combat",
+      "name":"Mortal Combat V4",
       "picture":"images/slider-2.jpeg",
       "price":"500"
     },
