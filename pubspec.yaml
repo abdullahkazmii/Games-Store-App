@@ -41,6 +41,12 @@ dependencies:
   firebase_storage: ^11.5.6
   google_sign_in: ^6.1.6
   font_awesome_flutter: ^10.6.0
+  shared_preferences: ^2.2.2
+  path_provider: ^2.1.2
+  sqflite: ^2.3.0
+  badges: ^3.1.2
+  provider: ^6.1.1
+
 
 
 
@@ -82,8 +88,8 @@ flutter:
     - images/rdr-1.jpg
     - images/gta-1.jpg
     - images/slider-1.webp
-    - images/slider-2.webp
-    - images/slider-3.webp
+    - images/slider-2.jpeg
+    - images/slider-3.jpeg
     - images/slider-4.jpeg
     - images/fortnite-3.jpeg
     - images/splash-color.png

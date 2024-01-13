@@ -1,7 +1,5 @@
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:project/categories.dart';
+import 'package:project/products.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -50,21 +48,11 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               InkWell(
-                  onTap: () {
-                    try {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => categories()),
-                      );
-                      print("Categories Page");
-                    } catch (e) {
-                      print('Error navigating to Categories: $e');
-                    }
-                  },
-                  child: ListTile(
-                    title: Text("Category"),
-                    leading: Icon(Icons.category),
-                  ),
+                onTap: (){},
+                child: ListTile(
+                  title: Text("Category"),
+                  leading: Icon(Icons.category),
+                ),
               ),
 
               // Sub-options for Categories
@@ -144,43 +132,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ]
         ),
-      ),
-
-      body: Stack(
-        children: [
-          // Carousel Background
-          CarouselSlider(
-            items: [
-              Image.network('https://placekitten.com/800/400', fit: BoxFit.cover),
-              Image.network('https://placekitten.com/800/401', fit: BoxFit.cover),
-              Image.network('https://placekitten.com/800/402', fit: BoxFit.cover),
-            ],
-            options: CarouselOptions(
-              height: double.infinity, // Match the screen height
-              viewportFraction: 1.0, // Full width of the screen
-              enlargeCenterPage: false,
-              autoPlay: true,
-              autoPlayInterval: Duration(seconds: 3),
-              autoPlayAnimationDuration: Duration(milliseconds: 800),
-              autoPlayCurve: Curves.fastOutSlowIn,
-            ),
-          ),
-
-          // Your Content
-          Column(
-            children: [
-              // Additional widgets or content
-              // Example: Text widget
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  "hello",
-                  style: TextStyle(fontSize: 20.0, color: Colors.white),
-                ),
-              ),
-            ],
-          ),
-        ],
       ),
 
       );

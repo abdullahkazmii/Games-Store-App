@@ -6,6 +6,7 @@ import 'package:project/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:project/tab1.dart';
+import 'package:project/tab3.dart';
 import 'package:project/products.dart';
 
 
@@ -33,6 +34,7 @@ Future<void> main()async{
       signup.id:(context)=>signup(),//dusra wala class ka name hota hai
       homepage.id:(context)=>homepage(),
       tab1.id:(context)=>tab1(),
+      tab3.id:(context)=>tab3(),
       product.id:(context)=>product(),
     },
   ));
