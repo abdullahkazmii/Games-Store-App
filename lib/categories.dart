@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/homepage.dart';
 import 'package:project/pages/category_details.dart';
 
 class categories extends StatelessWidget {
@@ -11,17 +12,17 @@ class categories extends StatelessWidget {
     },
     {
       "name":"game 2",
-      "picture":"images/fortnite-3.jpeg",
+      "picture":"images/slider-1.webp",
       "detail":"bla bla bla",
     },
     {
-      "name":"game 2",
-      "picture":"images/fortnite-3.jpeg",
+      "name":"game 3",
+      "picture":"images/slider-2.jpeg",
       "detail":"bla bla bla",
     },
     {
-      "name":"game 2",
-      "picture":"images/fortnite-3.jpeg",
+      "name":"game 4",
+      "picture":"images/slider-3.jpeg",
       "detail":"bla bla bla",
     },
   ];
@@ -31,6 +32,15 @@ class categories extends StatelessWidget {
     return
       Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => homepage()),
+              );
+            },
+          ),
           title: Text("Categories",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
         ),

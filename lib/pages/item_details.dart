@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/homepage.dart';
 import 'package:project/categories.dart';
+import 'package:project/pages/category_details.dart';
 
 class itemdetail extends StatelessWidget {
   const itemdetail({super.key, required this.item_name, required this.item_imagePath,required this.item_detail});
@@ -11,6 +12,15 @@ class itemdetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => categories()),
+              );
+            },
+          ),
           title: Text('Game Store',
             overflow: TextOverflow.ellipsis,
           ),
@@ -38,13 +48,6 @@ class itemdetail extends StatelessWidget {
 
             SizedBox(width: 20,),
           ],
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, size: 30,),
-            color: Colors.black,
-            onPressed: () {
-              Navigator.pushNamed(context, 'categories'); // Navigate back to the previous page
-            },
-          ),
         ),
         body: new ListView(
           children: [
