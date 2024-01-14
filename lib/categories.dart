@@ -1,37 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:project/homepage.dart';
 import 'package:project/pages/category_details.dart';
 
 class categories extends StatelessWidget {
   var category_list=[
     {
-      "name":"Action Games",
+      "name":"game 1",
       "picture":"images/fortnite-3.jpeg",
       "detail":"bla bla bla",
 
     },
     {
-      "name":"First-Person Shooter Games",
-      "picture":"images/fortnite-3.jpeg",
+      "name":"game 2",
+      "picture":"images/slider-1.webp",
       "detail":"bla bla bla",
     },
     {
-      "name":"Role-Playing Games",
-      "picture":"images/fortnite-3.jpeg",
+      "name":"game 3",
+      "picture":"images/slider-2.jpeg",
       "detail":"bla bla bla",
     },
     {
-      "name":"Sports and Racing Games",
-      "picture":"images/fortnite-3.jpeg",
-      "detail":"bla bla bla",
-    },
-    {
-      "name":"Strategy Games",
-      "picture":"images/fortnite-3.jpeg",
-      "detail":"bla bla bla",
-    },
-    {
-      "name":"Horror Games",
-      "picture":"images/fortnite-3.jpeg",
+      "name":"game 4",
+      "picture":"images/slider-3.jpeg",
       "detail":"bla bla bla",
     },
   ];
@@ -41,6 +32,15 @@ class categories extends StatelessWidget {
     return
       Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => homepage()),
+              );
+            },
+          ),
           title: Text("Categories",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
         ),
