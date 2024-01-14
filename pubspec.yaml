@@ -95,6 +95,12 @@ flutter:
     - images/splash-color.png
     - images/splash-logo.png
     - images/splash-2.png
+    - images/ag/
+    - images/fsg/
+    - images/hg/
+    - images/rg/
+    - images/rpg/
+    - images/sg/
 
 
 #  fonts:
