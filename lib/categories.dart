@@ -4,23 +4,33 @@ import 'package:project/pages/category_details.dart';
 class categories extends StatelessWidget {
   var category_list=[
     {
-      "name":"game 1",
+      "name":"Action Games",
       "picture":"images/fortnite-3.jpeg",
       "detail":"bla bla bla",
 
     },
     {
-      "name":"game 2",
+      "name":"First-Person Shooter Games",
       "picture":"images/fortnite-3.jpeg",
       "detail":"bla bla bla",
     },
     {
-      "name":"game 2",
+      "name":"Role-Playing Games",
       "picture":"images/fortnite-3.jpeg",
       "detail":"bla bla bla",
     },
     {
-      "name":"game 2",
+      "name":"Sports and Racing Games",
+      "picture":"images/fortnite-3.jpeg",
+      "detail":"bla bla bla",
+    },
+    {
+      "name":"Strategy Games",
+      "picture":"images/fortnite-3.jpeg",
+      "detail":"bla bla bla",
+    },
+    {
+      "name":"Horror Games",
       "picture":"images/fortnite-3.jpeg",
       "detail":"bla bla bla",
     },
