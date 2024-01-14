@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:project/pages/category_details.dart';
 
 class categories extends StatelessWidget {
   var category_list=[
     {
       "name":"game 1",
       "picture":"images/fortnite-3.jpeg",
+      "detail":"bla bla bla",
+
     },
     {
       "name":"game 2",
       "picture":"images/fortnite-3.jpeg",
+      "detail":"bla bla bla",
     },
     {
       "name":"game 2",
       "picture":"images/fortnite-3.jpeg",
+      "detail":"bla bla bla",
     },
     {
       "name":"game 2",
       "picture":"images/fortnite-3.jpeg",
+      "detail":"bla bla bla",
     },
   ];
   @override
@@ -29,25 +35,41 @@ class categories extends StatelessWidget {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
         ),
         body: Container(
-          padding: const EdgeInsets.all(12),
-          child: Center(
-            child: GridView.builder(
-              shrinkWrap: true,
-              itemCount: 4,
-              gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 8.0,
-                mainAxisSpacing: 8.0,
+            padding: const EdgeInsets.all(12),
+            child: Center(
+              child: GridView.builder(
+                shrinkWrap: true,
+                itemCount: category_list.length,
+                gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 8.0,
+                  mainAxisSpacing: 8.0,
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      // Handle the tap here, for example, navigate to a new page
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => category_details(
+                            category_list: category_list,
+                            name: category_list[index]["name"],
+                          ),
+                        ),
+                      );
+                    },
+                    child: Category(
+                      name: category_list[index]["name"] ?? "",
+                      imagePath: category_list[index]["picture"] ?? "",
+                      detail: category_list[index]["detail"] ?? "",
+                    ),
+                  );
+                },
               ),
-              itemBuilder: (BuildContext context, int index) {
-                return Category(
-                  name: category_list[index]["name"] ?? "",
-                  imagePath: category_list[index]["picture"] ?? "",
-                );
-              },
             ),
           ),
-        ));
+        );
   }
 }
 
@@ -55,8 +77,10 @@ class categories extends StatelessWidget {
 class Category extends StatelessWidget {
   final String name;
   final String imagePath;
+  final String detail;
 
-  const Category({Key? key, required this.name, required this.imagePath})
+
+  const Category({Key? key, required this.name, required this.imagePath,required this.detail})
       : super(key: key);
 
   @override

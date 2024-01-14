@@ -79,28 +79,27 @@ class _productState extends State<product> {
           ),
         ),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.blue, Colors.black],
-          ),
-        ),
-        child: GridView.builder(
-            itemCount: product_list.length,
-            gridDelegate:new SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+        body: Container(
+          padding: const EdgeInsets.all(12),
+          child: Center(
+            child: GridView.builder(
+              shrinkWrap: true,
+              itemCount: product_list.length,
+              gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 8.0,
+                mainAxisSpacing: 8.0,
+              ),
+    itemBuilder: (BuildContext context, int index){
+    return single_product(
+    product_name: product_list[index]['name'],
+    product_image: product_list[index]['picture'],
+    product_price: product_list[index]['price'],
+    );
+              }
             ),
-            itemBuilder: (BuildContext context, int index){
-              return single_product(
-                product_name: product_list[index]['name'],
-                product_image: product_list[index]['picture'],
-                product_price: product_list[index]['price'],
-              );
-            }
-        ),
-      ),
+          ),
+        )
     );
   }
 }
