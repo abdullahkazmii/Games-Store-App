@@ -69,7 +69,7 @@ class _loginState extends State<login> {
                             hintText: 'Email',
                             hintStyle: TextStyle(
                               color: Colors.grey, // Set the hint text color
-                            ),
+                            ),//
                           ),
 
                           validator: (value) {

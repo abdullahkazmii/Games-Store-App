@@ -60,8 +60,8 @@ class HomeScreen extends StatelessWidget {
               ),
               items: [
                 'images/slider-1.webp',
-                'images/slider-2.jpeg',
-                'images/slider-3.jpeg',
+                'images/slider-2.jpg',
+                'images/slider-2.webp',
               ].map((item) {
                 return Builder(
                   builder: (BuildContext context) {
