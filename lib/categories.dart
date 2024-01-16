@@ -53,6 +53,16 @@ class categories extends StatelessWidget {
           ),
           title: Text("Categories",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+          backgroundColor: Colors.transparent,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Colors.lightBlueAccent, Colors.purple],
+              ),
+            ),
+          ),
         ),
         body: Container(
             padding: const EdgeInsets.all(12),

@@ -37,7 +37,7 @@ class _loginState extends State<login> {
     return Container( //since scaffold apki background image nhi leta hum container return krwain gai
       decoration: BoxDecoration(
           image:  DecorationImage(
-              image: AssetImage('images/login.webp'),
+              image: AssetImage('images/spiderman1.jpg'),
               fit:BoxFit.cover
           )
       ),
@@ -46,20 +46,9 @@ class _loginState extends State<login> {
         body: Stack( //to keep things organized
           children: [
             Container(
-              color: Colors.white.withOpacity(0.2), // Adjust opacity as needed
+              color: Colors.white.withOpacity(0.3), // Adjust opacity as needed
             ),
-            Container(
-              padding: EdgeInsets.only(left: 33, top: 130),
-              child: Text(
-                'WELCOME\nTO OUR WEBSITE',
-                 style: TextStyle(
-                  color: Colors.black, // Set text color based on your design
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-            ),
+
             SingleChildScrollView( //for scrolling
                 child: Container(
                   padding: EdgeInsets.only(

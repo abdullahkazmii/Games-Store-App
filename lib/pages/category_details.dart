@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/pages/item_details.dart';
-import '../consts/colors.dart';
-import '../consts/styles.dart';
+
 
 class category_details extends StatelessWidget {
   final String? name;
@@ -14,6 +13,17 @@ class category_details extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(name ?? 'Default Title'),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.lightBlueAccent, Colors.purple],
+            ),
+          ),
+        ),
       ),
       body: GridView.builder(
         physics: BouncingScrollPhysics(),
@@ -67,16 +77,16 @@ class category_details extends StatelessWidget {
                   Text(
                     "Laptop 4GB/64GB",
                     style: TextStyle(
-                      fontFamily: semibold,
-                      color: darkFontGrey,
+                      fontFamily: 'OpenSans-Bold',
+                      color: Colors.grey,
                     ),
                   ),
                   SizedBox(height: 10),
                   Text(
                     "\$600",
                     style: TextStyle(
-                      color: greenColor,
-                      fontFamily: bold,
+                      fontFamily: 'OpenSans-Bold',
+                      color: Colors.grey,
                       fontSize: 16,
                     ),
                   ),

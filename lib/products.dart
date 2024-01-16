@@ -15,6 +15,18 @@ class product extends StatefulWidget {
 class _productState extends State<product> {
   var product_list=[
     {
+      "name":"Resident Evil",
+      "picture":"images/Resident.webp",
+      "price":"200",
+      "description":'"Resident Evil Village" continues the story of Ethan Winters, who previously appeared in "Resident Evil 7: Biohazard." Set in a mysterious village in Eastern Europe, Ethan must navigate through various environments, including a medieval castle and a factory, to rescue his kidnapped daughter, Rose.',
+    },
+    {
+      "name":"Hogwarts Legacy",
+      "picture":"images/Hogwart.jpg",
+      "price":"800",
+      "description":'Hogwarts Legacy" is an action role-playing video game set in the Wizarding World of Harry Potter. The game was developed by Portkey Games and published by Warner Bros. Interactive Entertainment. Please note that my information might be outdated as my training only includes data up to January 2022, and I dont have the capability to browse the internet for real-time updates.',
+    },
+    {
       "name":"Fortnite",
       "picture":"images/fortnite-3.jpeg",
       "price":"900",
@@ -23,9 +35,51 @@ class _productState extends State<product> {
     {
       "name":"GTA- Vice City",
       "picture":"images/slider-1.webp",
-      "price":"1000",
+      "price":"300",
       "description":"Grand Theft Auto: Vice City, commonly known as GTA Vice City, is an action-adventure video game developed by Rockstar North and published by Rockstar Games. It was released in 2002 as the sixth title in the Grand Theft Auto series. Set in the fictional Vice City, a heavily inspired rendition of Miami in the 1980s, the game follows the story of Tommy Vercetti, a former member of the Forelli crime family, who is released from prison and seeks to establish a criminal empire in the city.",
     },
+
+    {
+      "name":"Last Of Us",
+      "picture":"images/last.webp",
+      "price":"800",
+      "description":'"The Last of Us" is an action-adventure video game series developed by Naughty Dog and published by Sony Computer Entertainment. As of my last knowledge update in January 2022, the series consists of two main installments: "The Last of Us" (2013) and "The Last of Us Part II" (2020).',
+    },
+    {
+      "name":"Prince of Persia",
+      "picture":"images/ign.jpeg",
+      "price":"700",
+      "description":'The "Prince of Persia" is a popular video game franchise that has been around since the release of the original game in 1989. Developed by various studios over the years, the series is known for its platforming, acrobatics, and time-manipulation mechanics. As of my last knowledge update in January 2022, the latest main installment was "Prince of Persia: The Sands of Time Remake," announced in 2020.',
+    },
+
+    {
+      "name":"God Of War",
+      "picture":"images/slider-4.jpeg",
+      "price":"600",
+      "description":'"God of War" is an action-adventure video game developed by Santa Monica Studio and published by Sony Interactive Entertainment. Released in April 2018 for the PlayStation 4, it serves as a soft reboot of the popular "God of War" series, taking the story in a new direction. The game has received widespread acclaim for its narrative, gameplay, visuals, and character development.',
+    },
+
+    {
+      "name":"Fifa",
+      "picture":"images/slider-3.webp",
+      "price":"900",
+      "description":'"FIFA" is a popular series of football (soccer) simulation video games developed and published by EA Sports, a division of Electronic Arts. The franchise has been a mainstay in the sports gaming genre since its debut in 1993. Each year, a new installment is released to reflect the latest developments in the world of football, featuring updated teams, player rosters, and improved gameplay mechanics. As of my last knowledge update in January 2022, the latest FIFA installment was "FIFA 22."',
+    },
+
+    {
+      "name":"RDR-2",
+      "picture":"images/rdr.jpg",
+      "price":"500",
+      "description":'"Red Dead Redemption 2" (RDR2) is an action-adventure game developed and published by Rockstar Games. Released in October 2018, it serves as the prequel to the critically acclaimed "Red Dead Redemption." Set in the American Wild West in 1899, the game offers an expansive open-world environment filled with stunning landscapes, diverse wildlife, and a rich narrative.',
+    },
+
+    {
+      "name":"Ratchet and Clank",
+      "picture":"images/Ratchet.jpg",
+      "price":"100",
+      "description":'"Ratchet & Clank" is a popular action-adventure video game series developed by Insomniac Games. The series is known for its engaging gameplay, creative weapons, and humorous storytelling. As of my last knowledge update in January 2022, the latest installment was "Ratchet & Clank: Rift Apart," released for the PlayStation 5 in June 2021.',
+    },
+
     {
       "name":"Mortal Combat",
       "picture":"images/slider-2.jpeg",
@@ -35,27 +89,10 @@ class _productState extends State<product> {
     {
       "name":"MineCraft",
       "picture":"images/slider-3.jpeg",
-      "price":"1000",
+      "price":"200",
       "description":"Minecraft is a sandbox video game that has taken the gaming world by storm. Developed and published by Mojang Studios, it offers players an open-world environment to explore, build, and survive. Launched in 2011, Minecraft has become a cultural phenomenon, captivating millions of players worldwide with its unique blend of creativity and adventure.",
     },
-    {
-      "name":"God Of War",
-      "picture":"images/slider-4.jpeg",
-      "price":"2000",
-      "description":"Hello this is me",
-    },
-    {
-      "name":"Game",
-      "picture":"images/fortnite-3.jpeg",
-      "price":"1000",
-      "description":"Hello this is me",
-    },
-    {
-      "name":"game 2",
-      "picture":"images/fortnite-3.jpeg",
-      "price":"1000",
-      "description":"Hello this is me",
-    },
+
   ];
   @override
   Widget build(BuildContext context) {
@@ -159,7 +196,7 @@ class single_product extends StatelessWidget {
                         color: Colors.blueGrey, // Set the background color
                       ),
                       child: Text(
-                        '\pkr$product_price',
+                        '\$$product_price',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white, // Set the text color

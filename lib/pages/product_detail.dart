@@ -21,7 +21,7 @@ class _product_detailState extends State<product_detail> {
   Widget build(BuildContext context) {
      return Scaffold(
           appBar: AppBar(
-            title: Text('Game Store',
+            title: Text('Game Detail',
               overflow: TextOverflow.ellipsis,
             ),
             backgroundColor: Colors.transparent,
@@ -82,7 +82,7 @@ class _product_detailState extends State<product_detail> {
                                         mainAxisAlignment: MainAxisAlignment.end, // Align to the right
                                         children: [
                                           Text(
-                                            '\pkr',
+                                            '\$',
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               color: Colors.green,

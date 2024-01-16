@@ -156,7 +156,7 @@ class Profile extends StatelessWidget {
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
-                        colors: [Colors.purple, Colors.deepPurple], // Gradient colors
+                        colors: [Colors.white, Colors.black, Colors.white], // Gradient colors
                       ),
                     ),
                     child: ListView.separated(
@@ -233,7 +233,7 @@ class DetailsCard extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Colors.lightBlueAccent, Colors.purple], // Gradient colors
+          colors: [Colors.black, Colors.purple, Colors.black], // Gradient colors
         ),
         borderRadius: BorderRadius.circular(16.0),
         boxShadow: [

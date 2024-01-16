@@ -34,14 +34,14 @@ class _signupState extends State<signup> {
     return Container( //since scaffold apki background image nhi leta hum container return krwain gai
       decoration: BoxDecoration(
           image:  DecorationImage(
-              image: AssetImage('images/signup.jpg'),
+              image: AssetImage('images/spiderman1.jpg'),
               fit:BoxFit.cover
           )
       ),
       child: Scaffold(
 
         appBar: AppBar(
-          backgroundColor: Colors.white.withOpacity(0.2),
+          backgroundColor: Colors.white.withOpacity(0.3),
 
           leading: IconButton(
             icon: Icon(Icons.arrow_back, size: 30,),

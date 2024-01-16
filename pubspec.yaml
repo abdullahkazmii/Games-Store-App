@@ -46,6 +46,9 @@ dependencies:
   sqflite: ^2.3.0
   badges: ^3.1.2
   provider: ^6.1.1
+  chewie: ^1.7.4
+  video_player: ^2.8.2
+
 
 
 
@@ -101,6 +104,15 @@ flutter:
     - images/rg/
     - images/rpg/
     - images/sg/
+    - images/Hogwart.jpg
+    - images/Ratchet.jpg
+    - images/rdr.jpg
+    - images/Resident.webp
+    - images/slider-3.webp
+    - images/slider-2.webp
+    - images/ign.jpeg
+    - images/last.webp
+    - images/spiderman1.jpg
 
 
 #  fonts:
